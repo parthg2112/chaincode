@@ -1,134 +1,133 @@
-import Navigation from "@/components/Navigation";
-import HeroSection from "@/components/HeroSection";
-import InformationSections from "@/components/InformationSections";
 
-export default function Page() {
-  const navItems = [
-    { label: "Collector", href: "/collector" },
-    { label: "Manufacturer", href: "/manufacturer" },
-    { label: "Certifier", href: "/certifier" },
-    { label: "Lookup", href: "/lookup" },
-    { label: "Admin", href: "/admin" },
-    { label: "Features", href: "#benefits_heading" },
-    { label: "How it works", href: "#how_heading" },
-    { label: "Concepts", href: "#concepts_heading" },
-    { label: "Docs", href: "/docs" },
-  ];
+          
+// src/app/page.tsx
+"use client";
+
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Globe } from "lucide-react";
+
+export default function LandingPage() {
+  const [language, setLanguage] = useState("English");
 
   return (
-    <div className="relative min-h-dvh w-full bg-background text-foreground">
-      {/* Subtle global background accents */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80" />
-        <div className="absolute -top-40 left-1/3 h-[520px] w-[520px] rounded-full bg-primary/10 blur-[140px]" />
-        <div className="absolute bottom-[-180px] right-1/4 h-[460px] w-[460px] rounded-full bg-accent/5 blur-[120px]" />
-
-        {/* Floating leaves layer */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Leaf 1 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-12%] opacity-20"
-            style={{ top: "12%", ['--leaf-dur' as any]: "28s", ['--leaf-bob-dur' as any]: "6s" }}
-            width="48"
-            height="48"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-primary" />
-          </svg>
-          {/* Leaf 2 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-14%] opacity-15"
-            style={{ top: "32%", ['--leaf-dur' as any]: "34s", ['--leaf-bob-dur' as any]: "7s" }}
-            width="36"
-            height="36"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-primary" />
-          </svg>
-          {/* Leaf 3 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-16%] opacity-10"
-            style={{ top: "58%", ['--leaf-dur' as any]: "26s", ['--leaf-bob-dur' as any]: "5s" }}
-            width="64"
-            height="64"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-accent" />
-          </svg>
-          {/* Leaf 4 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-18%] opacity-20"
-            style={{ top: "72%", ['--leaf-dur' as any]: "40s", ['--leaf-bob-dur' as any]: "8s" }}
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-primary" />
-          </svg>
-          {/* Leaf 5 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-12%] opacity-10"
-            style={{ top: "85%", ['--leaf-dur' as any]: "32s", ['--leaf-bob-dur' as any]: "6s" }}
-            width="28"
-            height="28"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-accent" />
-          </svg>
-          {/* Leaf 6 */}
-          <svg
-            className="leaf-anim leaf-bob absolute left-[-20%] opacity-15"
-            style={{ top: "8%", ['--leaf-dur' as any]: "50s", ['--leaf-bob-dur' as any]: "10s" }}
-            width="56"
-            height="56"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M3 12c6-10 12-10 18 0-6 8-12 8-18 0Z" fill="currentColor" className="text-primary" />
-          </svg>
-        </div>
-      </div>
-
-      {/* <header className="relative z-10 w-full">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <Navigation
-            items={navItems}
-            cta={{ label: "Get started", href: "#benefits_heading" }}
-            logoHref="/"
-            logoLabel="TraceLeaf"
-          />
-        </div>
-      </header> */}
-
-      <main className="relative z-10">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <HeroSection className="mt-4 sm:mt-6" />
-
-          <section aria-label="Information" className="mt-10 sm:mt-14 md:mt-16">
-            <InformationSections />
-          </section>
-        </div>
-      </main>
-
-      <footer className="relative z-10 mt-16 sm:mt-20 md:mt-24">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-          <div className="flex flex-col items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:flex-row sm:p-5 backdrop-blur">
-            <p className="text-xs sm:text-sm text-white/60">
-              © {new Date().getFullYear()} TraceLeaf. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4 text-xs sm:text-sm text-white/60">
-              <span>Privacy</span>
-              <span className="h-3 w-px bg-white/15" aria-hidden="true" />
-              <span>Terms</span>
-            </div>
+    <main className="min-h-screen bg-black text-white flex flex-col">
+      {/* Header */}
+      <header className="flex justify-between items-center px-8 py-4 border-b border-gray-800">
+        <div className="flex items-center gap-2">
+          <div className="bg-green-600 px-3 py-1 rounded-full font-semibold">
+            DoHerbTrace
           </div>
         </div>
-      </footer>
-    </div>
+        <div className="flex items-center gap-4">
+          <p className="text-sm text-gray-400">Made for Ayurveda supply chains</p>
+          <div className="flex items-center gap-2 bg-gray-900 px-3 py-1 rounded-md">
+            <Globe size={16} />
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value)}
+              className="bg-transparent text-white text-sm focus:outline-none"
+            >
+              <option>English</option>
+              <option>हिन्दी</option>
+              <option>ગુજરાતી</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex flex-1 px-12 py-16 gap-16">
+        {/* Left side */}
+        <div className="flex flex-col gap-6 max-w-lg">
+          <h1 className="text-5xl font-bold leading-tight">
+            Trace the Journey of Your Herbs
+          </h1>
+          <p className="text-gray-400">
+            From farm to you: Transparent, blockchain-powered traceability for
+            Ayurvedic herbs.
+          </p>
+
+          <div className="flex gap-3">
+            <Button className="bg-green-600 hover:bg-green-700">
+              Track a Product
+            </Button>
+            <Button variant="secondary" className="bg-gray-800 hover:bg-gray-700">
+              Login as Collector | Manufacturer | Certifier
+            </Button>
+          </div>
+
+          <div className="flex gap-3 mt-4">
+            {["Benefits of traceability", "How it works", "Blockchain + geo-tagging"].map(
+              (item, i) => (
+                <div
+                  key={i}
+                  className="px-4 py-2 rounded-md bg-gray-900 text-sm cursor-pointer hover:bg-gray-800"
+                >
+                  {item}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div className="flex-1 flex items-center justify-center relative">
+          <Card className="bg-gradient-to-b from-green-900/20 to-green-600/10 w-[400px] h-[400px] rounded-2xl flex flex-col items-center justify-center text-center relative shadow-lg">
+            <div className="absolute top-4 right-4 bg-gray-900 px-3 py-1 text-sm rounded-full">
+              Atmosphere: Sunny
+            </div>
+            <div className="absolute bottom-10 right-4 bg-gray-900 px-3 py-1 text-sm rounded-full">
+              Size: Small
+            </div>
+            <div className="absolute top-1/2 -left-14 bg-gray-900 px-3 py-1 text-sm rounded-full">
+              Humidity: 10%
+            </div>
+            <div className="absolute top-1/3 -right-16 bg-gray-900 px-3 py-1 text-sm rounded-full">
+              Water Level: 450ml
+            </div>
+
+            <div className="flex flex-col items-center">
+              <span className="text-green-500 text-4xl">🌱</span>
+              <h3 className="text-2xl mt-4">Ashwagandha</h3>
+              <p className="text-gray-500 text-sm">
+                (Replace with 3D/PNG plant art later)
+              </p>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Roles Section */}
+      <section className="grid grid-cols-4 gap-6 px-12 py-12">
+        {[
+          {
+            title: "Collector",
+            desc: "Upload collection data & geo-tag locations.",
+          },
+          {
+            title: "Manufacturer",
+            desc: "Create batches, add processing & lab reports.",
+          },
+          {
+            title: "Certifier",
+            desc: "Verify submissions and view blockchain logs.",
+          },
+          {
+            title: "Consumer",
+            desc: "Scan/enter code and trace product journey.",
+          },
+        ].map((role, i) => (
+          <Card
+            key={i}
+            className="bg-gray-900 p-6 rounded-2xl hover:bg-gray-800 transition cursor-pointer"
+          >
+            <h4 className="text-xl font-semibold mb-2">{role.title}</h4>
+            <p className="text-gray-400 text-sm">{role.desc}</p>
+          </Card>
+        ))}
+      </section>
+    </main>
   );
 }
