@@ -1,6 +1,6 @@
 import QRCode from "qrcode";
 
-// Generate QR code (returns base64 image URL)
+
 export async function generateQRCode(data: string): Promise<string> {
   try {
     return await QRCode.toDataURL(data);
