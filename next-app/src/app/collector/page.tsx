@@ -9,7 +9,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { MapPin, Upload, LocateFixed } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
-export default function CollectorPage(): JSX.Element {
+export default function CollectorPage() {
   return (
     <div className="container mx-auto max-w-6xl px-4 py-6 md:py-8">
       <div className="mb-8">
@@ -24,7 +24,7 @@ export default function CollectorPage(): JSX.Element {
 
       <div className="grid md:grid-cols-2 gap-6">
         {/* Upload Form Card */}
-        <Card className="border border-white/10 bg-white/[0.03] backdrop-blur">
+        <Card className="border border-white/10 bg-black/[0.5]">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Upload className="w-5 h-5" />
@@ -110,7 +110,7 @@ export default function CollectorPage(): JSX.Element {
         </Card>
 
         {/* History + Map Card */}
-        <Card className="border border-white/10 bg-white/[0.03] backdrop-blur">
+        <Card className="border border-white/10 bg-black/[0.5]">
           <CardHeader>
             <CardTitle>Activity</CardTitle>
           </CardHeader>

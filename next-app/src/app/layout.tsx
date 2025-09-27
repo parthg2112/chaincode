@@ -1,9 +1,9 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/header";
 import Footer from "@/components/footer";
-import { AuthProvider } from "@/components/auth-provider";
+// import { AuthProvider } from "@/components/auth-provider";
 
 export const metadata: Metadata = {
   title: "DoHerbTrace",
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-black text-white font-sans">
-        <AuthProvider>
+        {/* <AuthProvider> */}
           <div className="flex flex-col min-h-screen">
             {/* Navbar */}
             <Navbar />
@@ -29,7 +29,7 @@ export default function RootLayout({
             {/* Footer */}
             <Footer />
           </div>
-        </AuthProvider>
+        {/* </AuthProvider> */}
       </body>
     </html>
   );
